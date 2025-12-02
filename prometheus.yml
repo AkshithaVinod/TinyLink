@@ -1,0 +1,9 @@
+# prometheus.yml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'tinylink-app'
+    static_configs:
+      - targets: ['app:8000']      # ← this is the key line
+    metrics_path: /metrics         # ← make sure this is here
